@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Discord Friends Guessing Game</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<main class="app">
+  <header class="header">
+    <h1>COSEdle</h1>
+    <p>
+      Guess the COSE individual Each guess reveals clues about how close you are like onepiecedle
+    </p>
+  </header>
+
+  <section class="game-card">
+    <div class="guess-form">
+      <input
+              id="guessInput"
+              type="text"
+              placeholder="Enter a friend's name..."
+              autocomplete="off"
+      />
+      <button id="guessButton" type="button">Guess</button>
+    </div>
+
+    <div id="suggestions" class="suggestions" aria-live="polite"></div>
+
+    <p id="message" class="message"></p>
+
+    <button id="playAgainButton" class="play-again hidden" type="button">
+      Play Again
+    </button>
+  </section>
+
+  <section class="results-section">
+    <div class="results-header">
+      <div>Name</div>
+      <div>Height</div>
+      <div>Origin</div>
+      <div>Cortisol</div>
+      <div>Yapper</div>
+      <div>Competitive</div>
+      <div>Vice</div>
+      <div>Combo Breaker</div>
+    </div>
+
+    <div id="results" class="results"></div>
+  </section>
+</main>
+
+<script src="characters.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
