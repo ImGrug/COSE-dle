@@ -1,7 +1,7 @@
 const CHARACTERS = [
   {
     name: "Alec",
-    height: 70,
+    height: 75,
     origin: "Missouri",
     cortisol: 8,
     yapper: "Yes",
@@ -11,12 +11,12 @@ const CHARACTERS = [
   },
   {
     name: "Bsim",
-    height: 67,
+    height: 73,
     origin: "New York",
     cortisol: 8,
     yapper: "Yes",
     competitiveGamer: "yes",
-    vice: ["Dat Vape", "Ball and Chain", "Alcohol"],
+    vice: ["Dat Vape", "Ball and Chain", "Alcohol", "Music"],
     comboBreaker: "yes"
   },
   {
@@ -31,7 +31,7 @@ const CHARACTERS = [
   },
   {
     name: "Joe",
-    height: 68,
+    height: 74,
     origin: "Missouri",
     cortisol: 9,
     yapper: "yes",
@@ -41,8 +41,8 @@ const CHARACTERS = [
   },
   {
     name: "Max",
-    height: 64,
-    origin: "Arkansaw",
+    height: 65,
+    origin: "Michigan",
     cortisol: 9,
     yapper: "no",
     competitiveGamer: "no",
@@ -51,17 +51,17 @@ const CHARACTERS = [
   },
   {
     name: "Kirby",
-    height: 69,
+    height: 70,
     origin: "Missouri",
     cortisol: 2,
-    yapper: "yes",
+    yapper: "no",
     competitiveGamer: "no",
     vice: ["DnD", "Teriyaki Chicken"],
     comboBreaker: "no"
   },
   {
     name: "Aidan",
-    height: 50,
+    height: 65,
     origin: "Illinois",
     cortisol: 10,
     yapper: "yes",
@@ -81,7 +81,7 @@ const CHARACTERS = [
   },
   {
     name: "Jimmy",
-    height: 67,
+    height: 74,
     origin: "Missouri",
     cortisol: 6,
     yapper: "sometimes",
@@ -91,17 +91,17 @@ const CHARACTERS = [
   },
   {
     name: "Sohl",
-    height: 67,
+    height: 74,
     origin: "California",
     cortisol: 8,
     yapper: "yes",
-    competitiveGamer: "no",
+    competitiveGamer: "yes",
     vice: ["Oldhead Takes", "Mai", "Coaching", "Ego", "MOBA's", "MMO's", "Fighting Games"],
     comboBreaker: "no"
   },
   {
     name: "Evelyn",
-    height: 67,
+    height: 71,
     origin: "California",
     cortisol: 6,
     yapper: "sometimes",
@@ -131,7 +131,7 @@ const CHARACTERS = [
   },
   {
     name: "Kalob",
-    height: 67,
+    height: 74,
     origin: "Indiana",
     cortisol: 6,
     yapper: "sometimes",
@@ -156,12 +156,12 @@ const CHARACTERS = [
     cortisol: 7,
     yapper: "yes",
     competitiveGamer: "no",
-    vice: ["Nails", "Rent", "Hair", "Begging"],
+    vice: ["Nails", "Rent", "Hair", "Begging", "Kissing and Telling"],
     comboBreaker: "no"
   },
   {
     name: "DualDustPanMan",
-    height: 72,
+    height: 70,
     origin: "Arizona",
     cortisol: 4,
     yapper: "yes",
@@ -171,7 +171,7 @@ const CHARACTERS = [
   },
   {
     name: "Owen",
-    height: 64,
+    height: 68,
     origin: "Missouri",
     cortisol: 8,
     yapper: "sometimes",
@@ -181,7 +181,7 @@ const CHARACTERS = [
   },
   {
     name: "Alek",
-    height: 75,
+    height: 76,
     origin: "Florida",
     cortisol: 6,
     yapper: "no",
@@ -191,7 +191,7 @@ const CHARACTERS = [
   },
   {
     name: "Charles",
-    height: 67,
+    height: 72,
     origin: "Illinois",
     cortisol: 6,
     yapper: "yes",
@@ -200,10 +200,10 @@ const CHARACTERS = [
     comboBreaker: "no"
   },
   {
-    name: "Va",
-    height: 30,
+    name: "Vasilios Voyatzoglou",
+    height: 69,
     origin: "Florida",
-    cortisol: 5,
+    cortisol: 7,
     yapper: "sometimes",
     competitiveGamer: "no",
     vice: ["MMO's", "Insomnia", "Die of Betes"],
@@ -211,7 +211,7 @@ const CHARACTERS = [
   },
   {
     name: "Daniel Judd",
-    height: 10,
+    height: 53,
     origin: "Missouri",
     cortisol: 10,
     yapper: "sometimes",
@@ -221,9 +221,9 @@ const CHARACTERS = [
   },
   {
     name: "Naia",
-    height: 70,
+    height: 69,
     origin: "Missouri",
-    cortisol: 7,
+    cortisol: 8,
     yapper: "yes",
     competitiveGamer: "no",
     vice: ["Mary Jane", "Cuttingboard Assault", "DnD"],
@@ -231,7 +231,7 @@ const CHARACTERS = [
   },
   {
     name: "Thuy",
-    height: 30,
+    height: 52,
     origin: "Florida",
     cortisol: 4,
     yapper: "yes",
@@ -246,12 +246,12 @@ const CHARACTERS = [
     cortisol: 7,
     yapper: "yes",
     competitiveGamer: "yes",
-    vice: ["MMO's", "MOBA's", "Reddit"],
+    vice: ["MMO's", "MOBA's", "Reddit","Nerd Games"],
     comboBreaker: "no"
   },
   {
     name: "Nate",
-    height: 70,
+    height: 72,
     origin: "Missouri",
     cortisol: 4,
     yapper: "no",
@@ -261,7 +261,7 @@ const CHARACTERS = [
   },
   {
     name: "Kevin",
-    height: 62,
+    height: 66,
     origin: "Illinois",
     cortisol: 3,
     yapper: "sometimes",
@@ -271,12 +271,22 @@ const CHARACTERS = [
   },
   {
     name: "Vincent",
-    height: 64,
+    height: 67,
     origin: "Missouri",
     cortisol: 2,
     yapper: "no",
     competitiveGamer: "yes",
     vice: ["Food", "Alcohol", "Fighting Games", "Dat Vape", "Mary Jane"],
+    comboBreaker: "yes"
+  },
+  {
+    name: "Tyler Sexton",
+    height: 72,
+    origin: "Missouri",
+    cortisol: 5,
+    yapper: "sometimes",
+    competitiveGamer: "no",
+    vice: ["MMO's", "Microphone", "Ball and Chain", "Nerd Games"],
     comboBreaker: "yes"
   }
 ];

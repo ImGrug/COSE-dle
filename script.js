@@ -261,7 +261,7 @@ function compareHeight(guessHeight, targetHeight) {
     return "exact";
   }
 
-  if (Math.abs(guess - target) <= 2) {
+  if (Math.abs(guess - target) <= 1) {
     return "partial";
   }
 
