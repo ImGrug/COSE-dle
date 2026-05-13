@@ -181,19 +181,17 @@ function updateSuggestions(searchText) {
     return;
   }
 
+  // Only match characters whose names START with the same first letter
+  const firstLetter = normalizedSearch[0];
+
   const matches = CHARACTERS
-      .filter((character) => normalizeString(character.name).includes(normalizedSearch))
+      .filter((character) => {
+        const name = normalizeString(character.name);
+        return name.startsWith(firstLetter);
+      })
       .sort((a, b) => {
-        const aName = normalizeString(a.name);
-        const bName = normalizeString(b.name);
-
-        const aStarts = aName.startsWith(normalizedSearch);
-        const bStarts = bName.startsWith(normalizedSearch);
-
-        if (aStarts && !bStarts) return -1;
-        if (!aStarts && bStarts) return 1;
-
-        return aName.localeCompare(bName);
+        // Optional: sort alphabetically
+        return a.name.localeCompare(b.name);
       });
 
   matches.forEach((character) => {
@@ -211,6 +209,7 @@ function updateSuggestions(searchText) {
     suggestionsElement.appendChild(chip);
   });
 }
+
 
 /**
  * Renders one row of comparison tiles for a guess.
