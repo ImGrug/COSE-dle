@@ -182,10 +182,19 @@ function updateSuggestions(searchText) {
   }
 
   const matches = CHARACTERS
-      .filter((character) => {
-        return normalizeString(character.name).includes(normalizedSearch);
-      })
-      .slice(0, 5);
+      .filter((character) => normalizeString(character.name).includes(normalizedSearch))
+      .sort((a, b) => {
+        const aName = normalizeString(a.name);
+        const bName = normalizeString(b.name);
+
+        const aStarts = aName.startsWith(normalizedSearch);
+        const bStarts = bName.startsWith(normalizedSearch);
+
+        if (aStarts && !bStarts) return -1;
+        if (!aStarts && bStarts) return 1;
+
+        return aName.localeCompare(bName);
+      });
 
   matches.forEach((character) => {
     const chip = document.createElement("button");

@@ -161,7 +161,7 @@ const CHARACTERS = [
   },
   {
     name: "DualDustPanMan",
-    height: 70,
+    height: 68,
     origin: "Arizona",
     cortisol: 4,
     yapper: "yes",
@@ -276,7 +276,7 @@ const CHARACTERS = [
     cortisol: 2,
     yapper: "no",
     competitiveGamer: "yes",
-    vice: ["Food", "Alcohol", "Fighting Games", "Dat Vape", "Mary Jane"],
+    vice: ["Food", "Alcohol", "Fighting Games", "Dat Vape"],
     comboBreaker: "yes"
   },
   {
@@ -287,7 +287,7 @@ const CHARACTERS = [
     yapper: "sometimes",
     competitiveGamer: "no",
     vice: ["MMO's", "Microphone", "Ball and Chain", "Nerd Games"],
-    comboBreaker: "yes"
+    comboBreaker: "no"
   }
 ];
 
