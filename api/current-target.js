@@ -21,9 +21,9 @@ module.exports = async function handler(request, response) {
             targetCharacter,
             currentTargetIndex: targetState.currentTargetIndex,
             lastRotationTimestamp: targetState.lastRotationTimestamp,
-            nextRotationTimestamp: getNextRotationTimestamp(new Date()).toISOString(),
             timeZone: CST_TIME_ZONE
         });
+
     } catch (error) {
         console.error("Failed to get current target:", error);
 
@@ -34,22 +34,35 @@ module.exports = async function handler(request, response) {
 };
 
 function rotateTargetIfNeeded() {
-    const now = new Date();
+    const nowUTC = new Date();
 
-    if (targetState.currentTargetIndex === null || targetState.lastRotationTimestamp === null) {
-        targetState.currentTargetIndex = getRandomCharacterIndex();
-        targetState.lastRotationTimestamp = getCurrentRotationWindowStart(now).toISOString();
-        return;
-    }
+    // Convert to CST
+    const nowCST = new Date(
+        nowUTC.toLocaleString("en-US", { timeZone: CST_TIME_ZONE })
+    );
 
-    const lastRotationDate = new Date(targetState.lastRotationTimestamp);
-    const nextRotationDate = getNextRotationTimestamp(lastRotationDate);
+    const hour = nowCST.getHours();
 
-    if (now >= nextRotationDate) {
-        targetState.currentTargetIndex = getRandomCharacterIndex(targetState.currentTargetIndex);
-        targetState.lastRotationTimestamp = getCurrentRotationWindowStart(now).toISOString();
+    // Determine which 12-hour window we are in
+    const windowIndex = hour < 12 ? 0 : 1;
+
+    // Build a unique seed for this window
+    const day = nowCST.getDate();
+    const month = nowCST.getMonth();
+    const year = nowCST.getFullYear();
+
+    const seed = year * 10000 + month * 100 + day * 2 + windowIndex;
+
+    // Deterministic index
+    const newIndex = seed % CHARACTERS.length;
+
+    // Only update if different
+    if (newIndex !== targetState.currentTargetIndex) {
+        targetState.currentTargetIndex = newIndex;
+        targetState.lastRotationTimestamp = nowUTC.toISOString();
     }
 }
+
 
 function getRandomCharacterIndex(previousIndex = null) {
     if (CHARACTERS.length === 0) {
