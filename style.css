@@ -164,6 +164,22 @@ button:disabled {
   display: none;
 }
 
+.share-btn {
+  background-color: #5865F2; /* Discord blurple */
+  color: white;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.share-btn:hover {
+  background-color: #4752C4;
+}
+
+
 .results-section {
   overflow-x: auto;
 }

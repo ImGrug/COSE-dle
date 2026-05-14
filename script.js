@@ -24,6 +24,8 @@ const playAgainButton = document.getElementById("playAgainButton");
 const resultsElement = document.getElementById("results");
 const messageElement = document.getElementById("message");
 const suggestionsElement = document.getElementById("suggestions");
+document.getElementById("shareButton").addEventListener("click", shareResults);
+
 
 /**
  * Loads the standardized target character from the backend API.
@@ -67,6 +69,7 @@ async function loadTargetCharacter() {
 
     guessInput.disabled = true;
     guessButton.disabled = true;
+    document.getElementById("shareButton").classList.add("hidden");
     playAgainButton.classList.add("hidden");
   } finally {
     setLoadingState(false);
@@ -94,6 +97,7 @@ function startGame() {
   guessInput.disabled = false;
   guessButton.disabled = false;
   playAgainButton.classList.add("hidden");
+
 
   guessInput.focus();
 
@@ -595,7 +599,9 @@ function winGame() {
 
   guessInput.disabled = true;
   guessButton.disabled = true;
-  playAgainButton.classList.remove("hidden");
+  playAgainButton.classList.add("hidden");
+  document.getElementById("shareButton").classList.remove("hidden");
+
 }
 
 /**
@@ -608,6 +614,31 @@ guessInput.addEventListener("keydown", (event) => {
     handleGuess();
   }
 });
+
+function shareResults() {
+  const rows = document.querySelectorAll(".guess-row");
+  let shareText = "COSE-dle Results\n\n";
+
+  rows.forEach(row => {
+    const tiles = row.querySelectorAll(".tile");
+    let line = "";
+
+    tiles.forEach(tile => {
+      if (tile.classList.contains("exact")) line += "🟩";
+      else if (tile.classList.contains("partial")) line += "🟥";
+      else if (tile.classList.contains("none")) line += "⬛";
+      else if (tile.classList.contains("name-tile")) line += "🟦";
+      else line += "⬜"; // fallback
+    });
+
+    shareText += line + "\n";
+  });
+
+  navigator.clipboard.writeText(shareText).then(() => {
+    alert("Copied to clipboard!");
+  });
+}
+
 
 guessInput.addEventListener("input", () => {
   updateSuggestions(guessInput.value);
