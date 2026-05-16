@@ -256,7 +256,7 @@ const CHARACTERS = [
     cortisol: 4,
     yapper: "no",
     competitiveGamer: "no",
-    vice: ["Dying For Our Country", "MOBA's", "Fighting-Games"],
+    vice: ["Dying-For-Our-Country", "MOBA's", "Fighting-Games"],
     comboBreaker: "yes"
   },
   {
@@ -266,7 +266,7 @@ const CHARACTERS = [
     cortisol: 3,
     yapper: "sometimes",
     competitiveGamer: "no",
-    vice: ["Baseball", "Fighting Games", "Fiending for Ball and Chain BAD"],
+    vice: ["Baseball", "Fighting-Games", "Fiending-for-Ball-and-Chain-BAD"],
     comboBreaker: "yes"
   },
   {
@@ -276,7 +276,7 @@ const CHARACTERS = [
     cortisol: 2,
     yapper: "no",
     competitiveGamer: "yes",
-    vice: ["Food", "Alcohol", "Fighting Games", "Dat Vape"],
+    vice: ["Food", "Alcohol", "Fighting-Games", "Dat Vape"],
     comboBreaker: "yes"
   },
   {
@@ -286,7 +286,7 @@ const CHARACTERS = [
     cortisol: 5,
     yapper: "sometimes",
     competitiveGamer: "no",
-    vice: ["MMO's", "Microphone", "Ball and Chain", "Nerd Games"],
+    vice: ["MMO's", "Microphone", "Ball and Chain", "Nerd-Games"],
     comboBreaker: "no"
   }
 ];

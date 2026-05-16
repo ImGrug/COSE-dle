@@ -543,6 +543,19 @@ function getRegion(origin) {
       "connecticut",
       "maine",
       "vermont"
+    ],
+    international: [
+      "argentina",
+      "brazil",
+      "canada",
+      "mexico",
+      "japan",
+      "korea",
+      "germany",
+      "france",
+      "spain",
+      "uk",
+      "england"
     ]
   };
 
@@ -578,7 +591,7 @@ function normalizeString(value) {
   return String(value)
       .trim()
       .toLowerCase()
-      .replace(/[^\w\s]/g, "")
+      .replace(/[^\w\s-]/g, "")
       .replace(/\s+/g, " ");
 }
 
